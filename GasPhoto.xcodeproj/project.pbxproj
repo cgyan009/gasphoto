@@ -11,8 +11,6 @@
 		DE6078812406E744007B669B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6078802406E744007B669B /* SceneDelegate.swift */; };
 		DE6078882406E747007B669B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE6078872406E747007B669B /* Assets.xcassets */; };
 		DE60788B2406E747007B669B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6078892406E747007B669B /* LaunchScreen.storyboard */; };
-		DE6078962406E747007B669B /* GasPhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6078952406E747007B669B /* GasPhotoTests.swift */; };
-		DE6078A12406E747007B669B /* GasPhotoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6078A02406E747007B669B /* GasPhotoUITests.swift */; };
 		DE6078B32406E871007B669B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6078B22406E871007B669B /* HomeViewController.swift */; };
 		DE6078B62406EAC6007B669B /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6078B52406EAC6007B669B /* Api.swift */; };
 		DE6078BA2406FB7A007B669B /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6078B92406FB7A007B669B /* PhotoViewModel.swift */; };
@@ -52,11 +50,7 @@
 		DE60788A2406E747007B669B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE60788C2406E747007B669B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE6078912406E747007B669B /* GasPhotoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GasPhotoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE6078952406E747007B669B /* GasPhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasPhotoTests.swift; sourceTree = "<group>"; };
-		DE6078972406E747007B669B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE60789C2406E747007B669B /* GasPhotoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GasPhotoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE6078A02406E747007B669B /* GasPhotoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasPhotoUITests.swift; sourceTree = "<group>"; };
-		DE6078A22406E747007B669B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE6078B22406E871007B669B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DE6078B52406EAC6007B669B /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		DE6078B92406FB7A007B669B /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
@@ -100,8 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				DE60787D2406E744007B669B /* GasPhoto */,
-				DE6078942406E747007B669B /* GasPhotoTests */,
-				DE60789F2406E747007B669B /* GasPhotoUITests */,
 				DE60787C2406E744007B669B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -129,24 +121,6 @@
 				DE6078CF240AB825007B669B /* .gitignore */,
 			);
 			path = GasPhoto;
-			sourceTree = "<group>";
-		};
-		DE6078942406E747007B669B /* GasPhotoTests */ = {
-			isa = PBXGroup;
-			children = (
-				DE6078952406E747007B669B /* GasPhotoTests.swift */,
-				DE6078972406E747007B669B /* Info.plist */,
-			);
-			path = GasPhotoTests;
-			sourceTree = "<group>";
-		};
-		DE60789F2406E747007B669B /* GasPhotoUITests */ = {
-			isa = PBXGroup;
-			children = (
-				DE6078A02406E747007B669B /* GasPhotoUITests.swift */,
-				DE6078A22406E747007B669B /* Info.plist */,
-			);
-			path = GasPhotoUITests;
 			sourceTree = "<group>";
 		};
 		DE6078AE2406E79A007B669B /* Supporting Files */ = {
@@ -361,7 +335,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE6078962406E747007B669B /* GasPhotoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,7 +342,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE6078A12406E747007B669B /* GasPhotoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
