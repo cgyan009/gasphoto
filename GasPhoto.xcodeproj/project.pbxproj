@@ -1,0 +1,698 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE60787F2406E744007B669B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE60787E2406E744007B669B /* AppDelegate.swift */; };
+		DE6078812406E744007B669B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6078802406E744007B669B /* SceneDelegate.swift */; };
+		DE6078882406E747007B669B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE6078872406E747007B669B /* Assets.xcassets */; };
+		DE60788B2406E747007B669B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE6078892406E747007B669B /* LaunchScreen.storyboard */; };
+		DE6078962406E747007B669B /* GasPhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6078952406E747007B669B /* GasPhotoTests.swift */; };
+		DE6078A12406E747007B669B /* GasPhotoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6078A02406E747007B669B /* GasPhotoUITests.swift */; };
+		DE6078B32406E871007B669B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6078B22406E871007B669B /* HomeViewController.swift */; };
+		DE6078B62406EAC6007B669B /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6078B52406EAC6007B669B /* Api.swift */; };
+		DE6078BA2406FB7A007B669B /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6078B92406FB7A007B669B /* PhotoViewModel.swift */; };
+		DE6078BD24073D7B007B669B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DE6078BC24073D7B007B669B /* Kingfisher */; };
+		DE6078C124075092007B669B /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6078C024075092007B669B /* PhotoCell.swift */; };
+		DE6078C32407E593007B669B /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6078C22407E593007B669B /* PhotoViewController.swift */; };
+		DE6078C62407FDC8007B669B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6078C52407FDC8007B669B /* UIView+Extensions.swift */; };
+		DE6078CC2408522E007B669B /* UIStackView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6078CB2408522E007B669B /* UIStackView+Extensions.swift */; };
+		DE6078CE2409D0A2007B669B /* NotificationName+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6078CD2409D0A2007B669B /* NotificationName+Extensions.swift */; };
+		DE6078D0240AB825007B669B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DE6078CF240AB825007B669B /* .gitignore */; };
+		DE6078D2240ADE73007B669B /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6078D1240ADE73007B669B /* Models.swift */; };
+		DE6078D6240AF63D007B669B /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6078D5240AF63D007B669B /* UIViewController+Extensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE6078922406E747007B669B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE6078732406E744007B669B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE60787A2406E744007B669B;
+			remoteInfo = GasPhoto;
+		};
+		DE60789D2406E747007B669B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE6078732406E744007B669B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE60787A2406E744007B669B;
+			remoteInfo = GasPhoto;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DE60787B2406E744007B669B /* GasPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GasPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE60787E2406E744007B669B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE6078802406E744007B669B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		DE6078872406E747007B669B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE60788A2406E747007B669B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE60788C2406E747007B669B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE6078912406E747007B669B /* GasPhotoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GasPhotoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE6078952406E747007B669B /* GasPhotoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasPhotoTests.swift; sourceTree = "<group>"; };
+		DE6078972406E747007B669B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE60789C2406E747007B669B /* GasPhotoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GasPhotoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE6078A02406E747007B669B /* GasPhotoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasPhotoUITests.swift; sourceTree = "<group>"; };
+		DE6078A22406E747007B669B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE6078B22406E871007B669B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DE6078B52406EAC6007B669B /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		DE6078B92406FB7A007B669B /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		DE6078C024075092007B669B /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		DE6078C22407E593007B669B /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		DE6078C52407FDC8007B669B /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		DE6078CB2408522E007B669B /* UIStackView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extensions.swift"; sourceTree = "<group>"; };
+		DE6078CD2409D0A2007B669B /* NotificationName+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extensions.swift"; sourceTree = "<group>"; };
+		DE6078CF240AB825007B669B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		DE6078D1240ADE73007B669B /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		DE6078D5240AF63D007B669B /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE6078782406E744007B669B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE6078BD24073D7B007B669B /* Kingfisher in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE60788E2406E747007B669B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE6078992406E747007B669B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE6078722406E744007B669B = {
+			isa = PBXGroup;
+			children = (
+				DE60787D2406E744007B669B /* GasPhoto */,
+				DE6078942406E747007B669B /* GasPhotoTests */,
+				DE60789F2406E747007B669B /* GasPhotoUITests */,
+				DE60787C2406E744007B669B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE60787C2406E744007B669B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE60787B2406E744007B669B /* GasPhoto.app */,
+				DE6078912406E747007B669B /* GasPhotoTests.xctest */,
+				DE60789C2406E747007B669B /* GasPhotoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE60787D2406E744007B669B /* GasPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				DE6078AF2406E7F0007B669B /* ViewModels */,
+				DE6078B12406E815007B669B /* Views and ViewControllers */,
+				DE6078B02406E7FF007B669B /* Models */,
+				DE6078C42407FDA5007B669B /* Extensions */,
+				DE6078B42406EA4F007B669B /* API */,
+				DE6078AE2406E79A007B669B /* Supporting Files */,
+				DE60788C2406E747007B669B /* Info.plist */,
+				DE6078CF240AB825007B669B /* .gitignore */,
+			);
+			path = GasPhoto;
+			sourceTree = "<group>";
+		};
+		DE6078942406E747007B669B /* GasPhotoTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE6078952406E747007B669B /* GasPhotoTests.swift */,
+				DE6078972406E747007B669B /* Info.plist */,
+			);
+			path = GasPhotoTests;
+			sourceTree = "<group>";
+		};
+		DE60789F2406E747007B669B /* GasPhotoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DE6078A02406E747007B669B /* GasPhotoUITests.swift */,
+				DE6078A22406E747007B669B /* Info.plist */,
+			);
+			path = GasPhotoUITests;
+			sourceTree = "<group>";
+		};
+		DE6078AE2406E79A007B669B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE60787E2406E744007B669B /* AppDelegate.swift */,
+				DE6078802406E744007B669B /* SceneDelegate.swift */,
+				DE6078872406E747007B669B /* Assets.xcassets */,
+				DE6078892406E747007B669B /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DE6078AF2406E7F0007B669B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DE6078B92406FB7A007B669B /* PhotoViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DE6078B02406E7FF007B669B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE6078D1240ADE73007B669B /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DE6078B12406E815007B669B /* Views and ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE6078B22406E871007B669B /* HomeViewController.swift */,
+				DE6078C024075092007B669B /* PhotoCell.swift */,
+				DE6078C22407E593007B669B /* PhotoViewController.swift */,
+			);
+			path = "Views and ViewControllers";
+			sourceTree = "<group>";
+		};
+		DE6078B42406EA4F007B669B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				DE6078B52406EAC6007B669B /* Api.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		DE6078C42407FDA5007B669B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DE6078C52407FDC8007B669B /* UIView+Extensions.swift */,
+				DE6078CB2408522E007B669B /* UIStackView+Extensions.swift */,
+				DE6078CD2409D0A2007B669B /* NotificationName+Extensions.swift */,
+				DE6078D5240AF63D007B669B /* UIViewController+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE60787A2406E744007B669B /* GasPhoto */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE6078A52406E747007B669B /* Build configuration list for PBXNativeTarget "GasPhoto" */;
+			buildPhases = (
+				DE6078772406E744007B669B /* Sources */,
+				DE6078782406E744007B669B /* Frameworks */,
+				DE6078792406E744007B669B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GasPhoto;
+			packageProductDependencies = (
+				DE6078BC24073D7B007B669B /* Kingfisher */,
+			);
+			productName = GasPhoto;
+			productReference = DE60787B2406E744007B669B /* GasPhoto.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE6078902406E747007B669B /* GasPhotoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE6078A82406E747007B669B /* Build configuration list for PBXNativeTarget "GasPhotoTests" */;
+			buildPhases = (
+				DE60788D2406E747007B669B /* Sources */,
+				DE60788E2406E747007B669B /* Frameworks */,
+				DE60788F2406E747007B669B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE6078932406E747007B669B /* PBXTargetDependency */,
+			);
+			name = GasPhotoTests;
+			productName = GasPhotoTests;
+			productReference = DE6078912406E747007B669B /* GasPhotoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DE60789B2406E747007B669B /* GasPhotoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE6078AB2406E747007B669B /* Build configuration list for PBXNativeTarget "GasPhotoUITests" */;
+			buildPhases = (
+				DE6078982406E747007B669B /* Sources */,
+				DE6078992406E747007B669B /* Frameworks */,
+				DE60789A2406E747007B669B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE60789E2406E747007B669B /* PBXTargetDependency */,
+			);
+			name = GasPhotoUITests;
+			productName = GasPhotoUITests;
+			productReference = DE60789C2406E747007B669B /* GasPhotoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE6078732406E744007B669B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Chenguo Yan";
+				TargetAttributes = {
+					DE60787A2406E744007B669B = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					DE6078902406E747007B669B = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = DE60787A2406E744007B669B;
+					};
+					DE60789B2406E747007B669B = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = DE60787A2406E744007B669B;
+					};
+				};
+			};
+			buildConfigurationList = DE6078762406E744007B669B /* Build configuration list for PBXProject "GasPhoto" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE6078722406E744007B669B;
+			packageReferences = (
+				DE6078BB24073D7B007B669B /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
+			productRefGroup = DE60787C2406E744007B669B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE60787A2406E744007B669B /* GasPhoto */,
+				DE6078902406E747007B669B /* GasPhotoTests */,
+				DE60789B2406E747007B669B /* GasPhotoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE6078792406E744007B669B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE60788B2406E747007B669B /* LaunchScreen.storyboard in Resources */,
+				DE6078D0240AB825007B669B /* .gitignore in Resources */,
+				DE6078882406E747007B669B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE60788F2406E747007B669B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE60789A2406E747007B669B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE6078772406E744007B669B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE6078C124075092007B669B /* PhotoCell.swift in Sources */,
+				DE6078D2240ADE73007B669B /* Models.swift in Sources */,
+				DE6078CC2408522E007B669B /* UIStackView+Extensions.swift in Sources */,
+				DE60787F2406E744007B669B /* AppDelegate.swift in Sources */,
+				DE6078BA2406FB7A007B669B /* PhotoViewModel.swift in Sources */,
+				DE6078C62407FDC8007B669B /* UIView+Extensions.swift in Sources */,
+				DE6078812406E744007B669B /* SceneDelegate.swift in Sources */,
+				DE6078B62406EAC6007B669B /* Api.swift in Sources */,
+				DE6078C32407E593007B669B /* PhotoViewController.swift in Sources */,
+				DE6078D6240AF63D007B669B /* UIViewController+Extensions.swift in Sources */,
+				DE6078CE2409D0A2007B669B /* NotificationName+Extensions.swift in Sources */,
+				DE6078B32406E871007B669B /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE60788D2406E747007B669B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE6078962406E747007B669B /* GasPhotoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE6078982406E747007B669B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE6078A12406E747007B669B /* GasPhotoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE6078932406E747007B669B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE60787A2406E744007B669B /* GasPhoto */;
+			targetProxy = DE6078922406E747007B669B /* PBXContainerItemProxy */;
+		};
+		DE60789E2406E747007B669B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE60787A2406E744007B669B /* GasPhoto */;
+			targetProxy = DE60789D2406E747007B669B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DE6078892406E747007B669B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE60788A2406E747007B669B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE6078A32406E747007B669B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE6078A42406E747007B669B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE6078A62406E747007B669B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KM3VWSD8ZB;
+				INFOPLIST_FILE = GasPhoto/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cg.yan.GasPhoto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE6078A72406E747007B669B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KM3VWSD8ZB;
+				INFOPLIST_FILE = GasPhoto/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cg.yan.GasPhoto;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DE6078A92406E747007B669B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KM3VWSD8ZB;
+				INFOPLIST_FILE = GasPhotoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cg.yan.GasPhotoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GasPhoto.app/GasPhoto";
+			};
+			name = Debug;
+		};
+		DE6078AA2406E747007B669B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KM3VWSD8ZB;
+				INFOPLIST_FILE = GasPhotoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cg.yan.GasPhotoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GasPhoto.app/GasPhoto";
+			};
+			name = Release;
+		};
+		DE6078AC2406E747007B669B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KM3VWSD8ZB;
+				INFOPLIST_FILE = GasPhotoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cg.yan.GasPhotoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GasPhoto;
+			};
+			name = Debug;
+		};
+		DE6078AD2406E747007B669B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KM3VWSD8ZB;
+				INFOPLIST_FILE = GasPhotoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = cg.yan.GasPhotoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GasPhoto;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE6078762406E744007B669B /* Build configuration list for PBXProject "GasPhoto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE6078A32406E747007B669B /* Debug */,
+				DE6078A42406E747007B669B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE6078A52406E747007B669B /* Build configuration list for PBXNativeTarget "GasPhoto" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE6078A62406E747007B669B /* Debug */,
+				DE6078A72406E747007B669B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE6078A82406E747007B669B /* Build configuration list for PBXNativeTarget "GasPhotoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE6078A92406E747007B669B /* Debug */,
+				DE6078AA2406E747007B669B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE6078AB2406E747007B669B /* Build configuration list for PBXNativeTarget "GasPhotoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE6078AC2406E747007B669B /* Debug */,
+				DE6078AD2406E747007B669B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DE6078BB24073D7B007B669B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.13.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DE6078BC24073D7B007B669B /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE6078BB24073D7B007B669B /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = DE6078732406E744007B669B /* Project object */;
+}
