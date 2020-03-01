@@ -19,6 +19,11 @@ class PhotoViewController: UIViewController {
         static let photoInfoUIPortraitSpacing: CGFloat = 12.0
         static let photoInfoUILandscapeSpacing: CGFloat = 0.0
         static let alertTitle = "oops"
+        static let comments = "Comments"
+        static let likes = "Likes"
+        static let photographer = "Photographer"
+        static let favorites = "Favorites"
+        static let downloads = "Downloads"
     }
     
     private var photoInfoStackViewSpacing: CGFloat = 0.0
@@ -125,7 +130,6 @@ class PhotoViewController: UIViewController {
                     self?.showAlert(withTitle: Constants.alertTitle, withMessage: message)
                 }
             }
-            
         }
     }
 }
@@ -157,16 +161,12 @@ extension PhotoViewController {
     }
     
     private func setupPhotoInfoUI() {
-        photoInfoStackView.addArrangedSubview(buildStackView(title: "Photographer",
-                                                             text: photoData.user))
-        photoInfoStackView.addArrangedSubview(buildStackView(title: "Likes",
-                                                             text: "\(photoData.likes)"))
-        photoInfoStackView.addArrangedSubview(buildStackView(title: "Comments",
-                                                             text: "\(photoData.comments)"))
-        photoInfoStackView.addArrangedSubview(buildStackView(title: "Favorites",
-                                                             text: "\(photoData.favorites)"))
-        photoInfoStackView.addArrangedSubview(buildStackView(title: "Downloads",
-                                                             text: "\(photoData.downloads)"))
+        photoInfoStackView.addArrangedSubview(buildStackView(title: Constants.photographer, text: photoData.user))
+        photoInfoStackView.addArrangedSubview(buildStackView(title: Constants.likes, text: "\(photoData.likes)"))
+        photoInfoStackView.addArrangedSubview(buildStackView(title: Constants.comments, text: "\(photoData.comments)"))
+        photoInfoStackView.addArrangedSubview(buildStackView(title: Constants.favorites,text: "\(photoData.favorites)"))
+        photoInfoStackView.addArrangedSubview(buildStackView(title: Constants.downloads,text: "\(photoData.downloads)"))
+        
         view.addSubview(photoInfoStackView)
         photoInfoStackView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -181,8 +181,6 @@ extension PhotoViewController {
         ])
     }
     
-    
-    
     private func buildStackView(title: String, text: String) -> UIStackView {
         let sv = UIStackView(text: title, subtext: text)
         sv.distribution = .equalSpacing
@@ -190,6 +188,7 @@ extension PhotoViewController {
     }
 }
 
+//MARK: UIScrollViewDelegate
 extension PhotoViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return imageView

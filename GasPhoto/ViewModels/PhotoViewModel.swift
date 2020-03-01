@@ -47,18 +47,18 @@ class PhotoViewModel {
         }
         api.fetchData(with: searchKeyWords, pageNo: nextPageNo){ [weak self] (result: Result<PhotoModel, Error>) in
             switch result {
-            case .success(let model):
-                if model.hits.count == 0 {
+            case .success(let photoModel):
+                if photoModel.hits.count == 0 {
                     break
                 }
                 DispatchQueue.main.async { [weak self] in
-                    if model.hits.count < PhotoViewModel.countOfRecordsPerPage {
+                    if photoModel.hits.count < PhotoViewModel.countOfRecordsPerPage {
                         // if total records less than 20, means only 1 page
                         self?.nextPageNo = -1
                     } else {
                         self?.nextPageNo += 1
                     }
-                    self?.photoList += model.hits
+                    self?.photoList += photoModel.hits
                     self?.isPullUp = false
                 }
             case .failure(let error):

@@ -21,7 +21,6 @@ class HomeViewController: UIViewController {
         static let placeholderImage = "image_placeholder"
     }
     private lazy var viewModel = PhotoViewModel()
-    private lazy var cancelhButton = UIButton()
     private lazy var photosTable: UITableView = UITableView(frame: CGRect.zero, style: .plain)
     
     private lazy var searchController: UISearchController = {
@@ -64,7 +63,6 @@ class HomeViewController: UIViewController {
     }
     
     private func searchPhotos() {
-        
         guard let searchString = searchController.searchBar.text else {
               return
           }
@@ -84,6 +82,7 @@ class HomeViewController: UIViewController {
 
 //MARK: setup ui
 extension HomeViewController {
+    
     private func setupUI() {
         view.backgroundColor = .systemBackground
         title = Constants.title
@@ -129,7 +128,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
-    
+    //implement fetching new records via scrollup
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let row = indexPath.row
         let section = tableView.numberOfSections - 1
@@ -148,7 +147,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        view.endEditing(false)
         let selectedPhoto = viewModel.photos[indexPath.row]
         let window = UIApplication.shared.windows.first { $0.isKeyWindow }
         if let navigationController = window?.rootViewController as? UINavigationController {
@@ -169,5 +167,4 @@ extension HomeViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         cancelSearch()
     }
-    
 }
