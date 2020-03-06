@@ -18,6 +18,7 @@ class PhotoViewController: UIViewController {
         static let minPhotoInfoUIHeight: CGFloat = 20.0
         static let photoInfoUIPortraitSpacing: CGFloat = 12.0
         static let photoInfoUILandscapeSpacing: CGFloat = 0.0
+        static let photoInfoStackViewSpacing: CGFloat = 12.0
         static let alertTitle = "oops"
         static let comments = "Comments"
         static let likes = "Likes"
@@ -26,7 +27,11 @@ class PhotoViewController: UIViewController {
         static let downloads = "Downloads"
     }
     
-    private var photoInfoStackViewSpacing: CGFloat = 0.0
+    private var portraitContraints = [NSLayoutConstraint]()
+    private var landscapeConstraints = [NSLayoutConstraint]()
+    private var sharedConstraints = [NSLayoutConstraint]()
+    
+    
     private lazy var imageView = UIImageView()
     
     private lazy var spinner: UIActivityIndicatorView = {
@@ -48,8 +53,14 @@ class PhotoViewController: UIViewController {
         tv.backgroundColor = .systemPink
         tv.axis = .vertical
         tv.distribution = .equalSpacing
-        tv.spacing = photoInfoStackViewSpacing
+        tv.spacing = Constants.photoInfoStackViewSpacing
         tv.alignment = .fill
+        tv.addArrangedSubview(buildStackView(title: Constants.photographer, text: photoData.user))
+        tv.addArrangedSubview(buildStackView(title: Constants.likes, text: "\(photoData.likes)"))
+        tv.addArrangedSubview(buildStackView(title: Constants.comments, text: "\(photoData.comments)"))
+        tv.addArrangedSubview(buildStackView(title: Constants.favorites,text: "\(photoData.favorites)"))
+        tv.addArrangedSubview(buildStackView(title: Constants.downloads,text: "\(photoData.downloads)"))
+        
         return tv
     }()
     
@@ -81,34 +92,24 @@ class PhotoViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
     }
-    
-    /// use this function to adjust content spacing inside `photoInfoStackView`
-    override func viewWillTransition(
-        to size: CGSize,
-        with coordinator: UIViewControllerTransitionCoordinator
-    ) {
-        photoInfoStackViewSpacing = size.height > size.width ?
-            Constants.photoInfoUIPortraitSpacing :
-            Constants.photoInfoUILandscapeSpacing
-        photoInfoStackView.spacing = photoInfoStackViewSpacing
-    }
-    
-    /// use this function to adjust content spacing inside `photoInfoStackView`
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let size = UIScreen.main.bounds.size
-        photoInfoStackViewSpacing = size.height > size.width
-            ? Constants.photoInfoUIPortraitSpacing
-            : Constants.photoInfoUILandscapeSpacing
-        photoInfoStackView.spacing = photoInfoStackViewSpacing
-    }
-    
+        
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let url = URL(string: photoData.largeImageURL) {
             if imageView.image == nil {
                 fetchImage(url: url)
             }
+        }
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if traitCollection.verticalSizeClass == .regular && landscapeConstraints[0].isActive  {
+            NSLayoutConstraint.deactivate(landscapeConstraints)
+            NSLayoutConstraint.activate(portraitContraints)
+        } else if traitCollection.horizontalSizeClass == .regular {
+            NSLayoutConstraint.deactivate(portraitContraints)
+            NSLayoutConstraint.activate(landscapeConstraints)
         }
     }
     
@@ -120,7 +121,8 @@ class PhotoViewController: UIViewController {
                     self?.spinner.stopAnimating()
                     if url == self?.photoUrl {
                         self?.image = UIImage(data: contents)
-                        self?.setupPhotoInfoUI()
+                        self?.activateConstraints()
+                        self?.photoInfoStackView.isHidden = false
                     }
                 }
             } catch let error {
@@ -142,33 +144,68 @@ extension PhotoViewController {
         title = photoData.tags
         view.addSubview(scrollView)
         scrollView.addSubview(imageView)
+        view.addSubview(photoInfoStackView)
+        photoInfoStackView.isHidden = true
         view.insertSubview(spinner, aboveSubview: scrollView)
         spinner.startAnimating()
         
         for v in view.subviews {
             v.translatesAutoresizingMaskIntoConstraints = false
         }
-        NSLayoutConstraint.activate([
+        setupSharedConstraints()
+        setupPortraitConstraints()
+        setupLandscapeConstraints()
+        NSLayoutConstraint.activate(sharedConstraints)
+    }
+    
+    private func activateConstraints() {
+        
+        if self.traitCollection.verticalSizeClass == .regular {
+            NSLayoutConstraint.activate(portraitContraints)
+        } else if self.traitCollection.horizontalSizeClass == .regular {
+            NSLayoutConstraint.activate(landscapeConstraints)
+        } else {
+            NSLayoutConstraint.activate(portraitContraints)
+        }
+    }
+    
+    private func setupSharedConstraints() {
+        sharedConstraints.append(contentsOf: [
+            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+    }
+    
+    private func setupPortraitConstraints() {
+        portraitContraints.append(contentsOf: [
             scrollView.safeTopAnchor.constraint(equalTo: view.safeTopAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.safeLeadingAnchor),
             scrollView.safeTrailingAnchor.constraint(equalTo: view.safeTrailingAnchor),
             scrollView.heightAnchor.constraint(equalTo: view.heightAnchor,
                                                multiplier: Constants.scrollViewHeightProportion),
-            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-            
+            photoInfoStackView.topAnchor.constraint(equalTo: scrollView.bottomAnchor,
+                                                    constant: Constants.inset),
+            photoInfoStackView.leadingAnchor.constraint(equalTo: view.safeLeadingAnchor,
+                                                        constant: Constants.inset),
+            photoInfoStackView.trailingAnchor.constraint(equalTo: view.safeTrailingAnchor,
+                                                         constant: -Constants.inset),
+            photoInfoStackView.heightAnchor.constraint(greaterThanOrEqualToConstant: Constants.minPhotoInfoUIHeight)
+        ])
+    }
+    private func setupLandscapeConstraints() {
+        landscapeConstraints.append(contentsOf: [
+            scrollView.safeTopAnchor.constraint(equalTo: view.safeTopAnchor),
+            scrollView.safeTrailingAnchor.constraint(equalTo: view.safeTrailingAnchor),
+            scrollView.safeBottomAnchor.constraint(equalTo: view.safeBottomAnchor),
+            scrollView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.6),
+            photoInfoStackView.leadingAnchor.constraint(equalTo: view.safeLeadingAnchor),
+            photoInfoStackView.topAnchor.constraint(equalTo: view.safeTopAnchor, constant: 8.0),
+            photoInfoStackView.heightAnchor.constraint(greaterThanOrEqualToConstant: 24.0),
+            photoInfoStackView.trailingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: -16.0)
         ])
     }
     
     private func setupPhotoInfoUI() {
-        photoInfoStackView.addArrangedSubview(buildStackView(title: Constants.photographer, text: photoData.user))
-        photoInfoStackView.addArrangedSubview(buildStackView(title: Constants.likes, text: "\(photoData.likes)"))
-        photoInfoStackView.addArrangedSubview(buildStackView(title: Constants.comments, text: "\(photoData.comments)"))
-        photoInfoStackView.addArrangedSubview(buildStackView(title: Constants.favorites,text: "\(photoData.favorites)"))
-        photoInfoStackView.addArrangedSubview(buildStackView(title: Constants.downloads,text: "\(photoData.downloads)"))
-        
-        view.addSubview(photoInfoStackView)
-        photoInfoStackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             photoInfoStackView.topAnchor.constraint(equalTo: scrollView.bottomAnchor,
