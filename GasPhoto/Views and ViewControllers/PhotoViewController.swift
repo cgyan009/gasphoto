@@ -31,6 +31,10 @@ class PhotoViewController: UIViewController {
     private var landscapeConstraints = [NSLayoutConstraint]()
     private var sharedConstraints = [NSLayoutConstraint]()
     private lazy var imageView = UIImageView()
+    private var isPortrait: Bool {
+        let size = UIScreen.main.bounds
+        return size.height > size.width
+    }
     
     private lazy var spinner: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView()
@@ -90,7 +94,7 @@ class PhotoViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
     }
-        
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let url = URL(string: photoData.largeImageURL) {
@@ -102,10 +106,10 @@ class PhotoViewController: UIViewController {
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        if traitCollection.verticalSizeClass == .regular && landscapeConstraints[0].isActive  {
+        if isPortrait {
             NSLayoutConstraint.deactivate(landscapeConstraints)
             NSLayoutConstraint.activate(portraitContraints)
-        } else if traitCollection.horizontalSizeClass == .regular {
+        } else {
             NSLayoutConstraint.deactivate(portraitContraints)
             NSLayoutConstraint.activate(landscapeConstraints)
         }
@@ -158,12 +162,10 @@ extension PhotoViewController {
     
     private func activateConstraints() {
         
-        if self.traitCollection.verticalSizeClass == .regular {
+        if isPortrait {
             NSLayoutConstraint.activate(portraitContraints)
-        } else if self.traitCollection.horizontalSizeClass == .regular {
+        } else  {
             NSLayoutConstraint.activate(landscapeConstraints)
-        } else {
-            NSLayoutConstraint.activate(portraitContraints)
         }
     }
     
