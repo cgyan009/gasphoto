@@ -30,8 +30,6 @@ class PhotoViewController: UIViewController {
     private var portraitContraints = [NSLayoutConstraint]()
     private var landscapeConstraints = [NSLayoutConstraint]()
     private var sharedConstraints = [NSLayoutConstraint]()
-    
-    
     private lazy var imageView = UIImageView()
     
     private lazy var spinner: UIActivityIndicatorView = {

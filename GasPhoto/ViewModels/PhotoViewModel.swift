@@ -40,6 +40,13 @@ class PhotoViewModel {
         searchKeyWords = ""
     }
     
+    func cancelSearch() {
+        //reset the search string to empty string
+        if !searchKeyWords.isEmpty {
+            searchKeyWords = ""
+        }
+    }
+    
     func getPhotos() {
         //no nextpage
         if nextPageNo == -1 {

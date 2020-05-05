@@ -71,13 +71,6 @@ class HomeViewController: UIViewController {
               viewModel.searchKeyWords = trimmedSearchString
           }
       }
-    
-    private func cancelSearch() {
-        //reset the search string to empty string
-        if !viewModel.searchKeyWords.isEmpty {
-            viewModel.searchKeyWords = ""
-        }
-    }
 }
 
 //MARK: setup ui
@@ -165,6 +158,6 @@ extension HomeViewController: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        cancelSearch()
+        viewModel.cancelSearch()
     }
 }

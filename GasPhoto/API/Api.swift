@@ -42,7 +42,7 @@ class API {
     ) {
         let session = URLSession.shared
         let task = session.dataTask(with: request) { (data, response, error) in
-            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            guard let httpResponse = response as? HTTPURLResponse, 200...226 ~= httpResponse.statusCode else {
                 completion(.failure(ApiError.serviceError))
                 return
             }
@@ -74,9 +74,9 @@ class API {
         urlComponents.path = Constants.path
         let keyItem = URLQueryItem(name: Constants.keyName, value: Constants.userKey)
         let qItem = URLQueryItem(name: Constants.keyWordsName, value: keyWords)
-        let imageTypeitem = URLQueryItem(name: Constants.imageTypeName, value: Constants.imageTypeValue)
+        let imageTypeItem = URLQueryItem(name: Constants.imageTypeName, value: Constants.imageTypeValue)
         let pageItem = URLQueryItem(name: Constants.pageName, value: "\(pageNo)")
-        urlComponents.queryItems = [keyItem, qItem, imageTypeitem, pageItem]
+        urlComponents.queryItems = [keyItem, qItem, imageTypeItem, pageItem]
         
         guard let url = urlComponents.url else {
             print(ApiError.urlError)
